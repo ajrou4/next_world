@@ -114,4 +114,57 @@ body {
   display: none;
 }
 
-/* Rest of the CSS styles... */
+game-container {
+  width: 800px;
+  height: 500px;
+  background: linear-gradient(135deg, var(--table-green) 0%, #27ae60 100%);
+  position: relative;
+  border-radius: 8px;
+  border: 20px solid var(--primary);
+  margin: 20px auto;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.net {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: repeating-linear-gradient(0deg, 
+    var(--white) 0px,
+    var(--white) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  opacity: 0.7;
+}
+
+.winner-section {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--primary), #3498db);
+  border-radius: 20px;
+  color: var(--white);
+  transform: scale(0.95);
+  opacity: 0;
+  animation: winnerReveal 1s forwards;
+}
+
+@keyframes winnerReveal {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#final-winner {
+  font-size: 48px;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #fff, #f1f1f1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
