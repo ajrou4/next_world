@@ -152,13 +152,16 @@ class Tournament {
         'finals': []
       };
       this.currentMatch = null;
-      this.pongGame = null;
+      this.PongGame = new PongGame();
       this.ui = null;
       this.matchesPlayed = 0;
       this.totalMatches = 7;
       this.playerStats = new Map();
-    }
-  
+    } 
+    
+    // connectedCallback(){
+    //   console.log('connected');
+    // }
     validatePlayerName(name) {
       const sanitized = name.replace(/<[^>]*>?/gm, '').trim();
       return sanitized.length >= 2 && sanitized.length <= 20;
@@ -200,9 +203,8 @@ class Tournament {
         .map(name => ({
           id: Math.random().toString(36).substr(2, 9),
           name: name.replace(/<[^>]*>?/gm, '').trim()
-        }))
-        .filter(player => this.validatePlayerName(player.name));
-  
+        })).filter(player => this.validatePlayerName(player.name));
+
       if (sanitizedPlayers.length < 4 || sanitizedPlayers.length > 8) {
         alert('Tournament requires between 4 and 8 players');
         return false;
@@ -380,7 +382,6 @@ class Tournament {
     startTournament() {
       const playerInputs = document.querySelectorAll('.player-input');
       const players = Array.from(playerInputs).map(input => input.value);
-  
       if (this.tournament.initializeTournament(players)) {
         document.querySelector('.setup-section').classList.add('hidden');
         document.querySelector('.tournament-bracket').classList.remove('hidden');
@@ -404,13 +405,13 @@ class Tournament {
         
         const player1Element = document.createElement('div');
         player1Element.className = `player ${match.winner === match.player1 ? 'winner' : ''}`;
-        player1Element.textContent = match.player1;
-        player1Element.onclick = () => this.handlePlayerClick('quarter-finals', index, match.player1);
+        player1Element.textContent = match.player1.name;
+        player1Element.onclick = () => this.handlePlayerClick('quarter-finals', index, match.player1.name);
   
         const player2Element = document.createElement('div');
         player2Element.className = `player ${match.winner === match.player2 ? 'winner' : ''}`;
-        player2Element.textContent = match.player2;
-        player2Element.onclick = () => this.handlePlayerClick('quarter-finals', index, match.player2);
+        player2Element.textContent = match.player2.name;
+        player2Element.onclick = () => this.handlePlayerClick('quarter-finals', index, match.player2.name);
   
         matchElement.appendChild(player1Element);
         matchElement.appendChild(player2Element);
@@ -459,7 +460,8 @@ class Tournament {
   
       if (this.tournament.winners.finals.length > 0) {
         document.querySelector('.winner-section').classList.remove('hidden');
-        document.getElementById('final-winner').textContent = this.tournament.winners.finals[0];
+        document.getElementById('final-winner').textContent = this.tournament. winners.finals[0];
+        // document.getElementById('final-winner').textContent = "Wa hasssssan";
       }
     }
   
