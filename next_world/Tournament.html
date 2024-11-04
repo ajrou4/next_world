@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="." />
+  <title>Ping Pong Game Tournament</title>
+  <link rel="stylesheet" href="Tournament.css">
+</head>
+<body>
+  <div class="tournament-container">
+    <div class="setup-section">
+      <h1>Ping Pong Tournament</h1>
+      <div class="players-list">
+        <input type="text" class="player-input" placeholder="Player 2">
+        <input type="text" class="player-input" placeholder="Player 3">
+        <input type="text" class="player-input" placeholder="Player 1">
+        <input type="text" class="player-input" placeholder="Player 4">
+        <input type="text" class="player-input" placeholder="Player 5">
+        <input type="text" class="player-input" placeholder="Player 6">
+        <input type="text" class="player-input" placeholder="Player 7">
+        <input type="text" class="player-input" placeholder="Player 8">
+      </div>
+      <button class="button" id="start-tournament"  onclick="window.location.href='game.html'" >Start Tournament</button>
+    </div>
+
+    <div class="tournament-stats">
+      <h3>Tournament Progress</h3>
+      <div class="tournament-progress">
+        <div class="progress-bar" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- <div class="game-container hidden">
+      <div class="net"></div>
+      <div class="paddle" id="leftPaddle"></div>
+      <div class="paddle" id="rightPaddle"></div>
+      <div class="ball"></div>
+      <div class="score" id="leftScore">0</div>
+      <div class="score" id="rightScore">0</div>
+    </div>  -->
+
+    <div class="game-info hidden">
+      <div id="current-players"></div>
+      <div id="game-status"></div>
+    </div>
+
+    <div class="match-controls hidden">
+      <button class="button" id="next-match">Next Match</button>
+    </div>
+
+    <div class="tournament-bracket hidden">
+      <div class="round" id="quarter-finals">
+        <h3>Quarter Finals</h3>
+        <div class="match-group"></div>
+        <div class="match-group"></div>
+      </div>
+      <div class="round" id="semi-finals">
+        <h3>Semi Finals</h3>
+      </div>
+      <div class="round" id="finals">
+        <h3>Finals</h3>
+      </div>
+    </div>
+
+    <div class="winner-section hidden">
+      <h2>CHAMPION</h2>
+      <h1 id="final-winner"></h1>
+      <h1>🏆</h1>
+    </div>
+  </div>
+</body>
+<script type="module" src="Tournament.js"></script>
+
+</html>

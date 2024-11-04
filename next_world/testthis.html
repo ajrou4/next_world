@@ -1,0 +1,72 @@
+<html><head><base href="." />
+<style>
+    body {
+        margin: 0;
+        background-color: #3498db;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+    }
+    
+    #gameCanvas {
+        border: 2px solid #fff;
+        background-color: #000;
+    }
+
+    #score {
+        position: absolute;
+        top: 20px;
+        color: #00ff00;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 0 0 5px #00ff00;
+    }
+
+    .controls {
+        position: absolute;
+        bottom: 20px;
+        color: #00ffff;
+        text-align: center;
+        text-shadow: 0 0 5px #00ffff;
+    }
+
+    #gameOver, #startPrompt {
+        position: absolute;
+        color: #ff00ff;
+        font-size: 32px;
+        text-align: center;
+        display: none;
+        text-shadow: 0 0 10px #ff00ff;
+    }
+
+    #gameStats {
+        position: absolute;
+        top: 60px;
+        color: #ff00ff;
+        font-size: 18px;
+        text-align: center;
+        display: none;
+        text-shadow: 0 0 5px #ff00ff;
+    }
+
+    #startPrompt {
+        display: block;
+    }
+</style>
+</head>
+<body>
+    <div id="score">Player 1: 0 | Player 2: 0</div>
+    <div id="gameOver"></div>
+    <div id="gameStats"></div>
+    <div id="startPrompt">Press SPACE to Start</div>
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+    <div class="controls">
+        Player 1: W/S keys | Player 2: Up/Down arrows
+    </div>
+
+<script>
+
+</script>
+</body></html>
